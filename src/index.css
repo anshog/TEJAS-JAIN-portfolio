@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-bg: #000000;
+  --color-brand-accent: #00aaff;
+  --color-brand-card: #111821;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  html, body {
+    @apply bg-brand-bg text-white font-sans antialiased overflow-x-hidden;
+  }
+}
+
+.glass-card {
+  @apply bg-brand-card/50 backdrop-blur-md border border-white/5 rounded-2xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-brand-accent;
+}
+
+.btn-primary {
+  @apply bg-brand-accent hover:bg-brand-accent/80 text-brand-bg font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,170,255,0.3)];
+}
+
+.btn-secondary {
+  @apply border border-brand-accent text-brand-accent hover:bg-brand-accent/10 px-8 py-3 rounded-lg transition-all duration-300;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
